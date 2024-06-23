@@ -20,7 +20,7 @@ public class cwh_86_ps14 {
             System.out.println("HeHe");
         }
         catch (ArithmeticException e){
-            System.out.println("Haha");
+            System.out.println("It is Exception hai => Haha");
         }
 
         // Problem 3
