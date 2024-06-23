@@ -1,25 +1,37 @@
 import java.util.Scanner;
 
-public class MaxRetriesDemos {
-    @SuppressWarnings("resource")
+public class MaxRetriesExceededExceptions extends Exception {
+    public MaxRetriesExceededExceptions(String message) {
+        super(message);
+    }
+
     public static void main(String[] args) {
+        try {
+            int result = getInputWithRetries(5);
+            System.out.println("You entered: " + result);
+        } catch (MaxRetriesExceededExceptions e) {
+            System.out.println("errors: " + e.getMessage());
+        }
+    }
+
+    @SuppressWarnings("resource")
+    public static int getInputWithRetries(int maxRetries) throws MaxRetriesExceededExceptions {
         Scanner scanner = new Scanner(System.in);
-        int maxRetries = 5;
         int retryCount = 0;
         boolean success = false;
+        int number = 0;
 
         while (retryCount < maxRetries && !success) {
             try {
                 System.out.print("Enter a positive integer: ");
-                int number = Integer.parseInt(scanner.nextLine());
+                number = Integer.parseInt(scanner.nextLine());
 
                 if (number <= 0) {
                     throw new IllegalArgumentException("Number must be positive");
                 }
 
-                // If input is valid, set success to true and print the number
+                // If input is valid, set success to true
                 success = true;
-                System.out.println("You entered: " + number);
 
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a valid integer.");
@@ -30,14 +42,11 @@ public class MaxRetriesDemos {
             }
         }
 
-        try {
-            if (retryCount >= maxRetries) {
-                throw new Exception("Max retries exceeded.");
-            }
-        } catch (Exception e) {
-            System.out.println("errors: " + e.getMessage());
+        if (!success) {
+            throw new MaxRetriesExceededExceptions("Maximum retries exceeded.");
         }
 
         scanner.close();
+        return number;
     }
 }
