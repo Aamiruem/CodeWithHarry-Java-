@@ -20,5 +20,18 @@ public class cwh_89_collections {
         // ArrayList
         // Set
         // TreeSet
+        // Stack
+        // HashMap
+        // Collections
+        // List
+        // Map
+        // Queue
+        // Dequeue
+        // PriorityQueue
+        // Deque
+        // LinkedHashSet
+        // Linkedlist
+
+        
     }
 }
