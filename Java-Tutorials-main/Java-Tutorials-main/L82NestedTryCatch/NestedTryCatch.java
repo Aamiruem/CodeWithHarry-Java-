@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class NestedTryCatch {
     public static void main(String[] args) {
-        int[] marks = {50, 60, 70};
+        int[] marks = { 50, 60, 70 };
         Scanner sc = new Scanner(System.in);
 
         boolean flag = true;
