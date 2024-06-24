@@ -1,14 +1,15 @@
 public class cwh_19_ch4_ps_pr_01 {
     public static void main(String args[]) {
         int a = 10;
-        if (a = 11) {
-            system.out.println("I am 11");
+        // Corrected the if condition to use the comparison operator (==)
+        if (a == 11) {
+            // Corrected the method name to System.out.println
+            System.out.println("I am 11");
+        } else {
+            // Corrected the method name to System.out.println
+            System.out.println("I am not 11");
         }
-        else {
-            system.out.println("I am not 11");
-        }
-        // This program will through an error beacuse in if conditon
-        // a=11 is an assignment operator and we can't put assignment operator in if condition
-        // if we use a == 11 then will properly run the program
+        // This program will now run correctly because we fixed the if condition
+        // to use the comparison operator (==) instead of the assignment operator (=)
     }
 }

@@ -1,6 +1,5 @@
 import java.util.*;
-
-public class CWH extends Thread{
+public class Remove extends Thread{
     public static void main(String[] args) {
 
         LinkedList<Integer> l1 = new LinkedList<>();
@@ -11,7 +10,11 @@ public class CWH extends Thread{
         l1.add(44);
         l1.add(55);
         l1.add(77);
-        l1.add(5,77); // Inserts 77 at index 5
-        System.out.println("L1 Linked list : "+ l1);
+        l1.add(5,77); 
+        System.out.println("L1 Linked list before: "+ l1);
+
+        l1.remove(2); //removes element present at 2nd index
+        System.out.println("L1 Linked list after: "  + l1);
+
     }
 }
