@@ -1,11 +1,10 @@
 import java.util.*;
 
-public class CWH extends Thread{
+public class CWH extends Thread {
     public static void main(String[] args) {
 
         // Create a LinkedList of Integer type
         LinkedList<Integer> l1 = new LinkedList<>();
-        
 
         // Add elements to the LinkedList
         l1.add(11);
